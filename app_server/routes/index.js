@@ -1,16 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const ctrlAuth = require('../controllers/auth');
+const ctrlReviews = require('../controllers/reviews');
 
-router.get('/register', function(req, res){
-  res.render('register', { title: 'Register' });
-});
-
-router.get('/login', function(req, res){
-  res.render('login', { title: 'Login' });
-});
-
-router.get('/reviews', function(req, res){
-  res.render('reviews', { title: 'My Reviews' });
-});
+router.get('/register', ctrlAuth.registerForm);
+router.get('/login', ctrlAuth.loginForm);
+router.get('/reviews', ctrlReviews.reviewsList);
 
 module.exports = router;
