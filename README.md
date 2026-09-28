@@ -1,5 +1,5 @@
 # Catalogger
-A simple music review tracking web application built with MEAN stack
+A simple music review tracking web application built with MEAN stack. \
 Project for web frameworks module.
 
 ## Features
