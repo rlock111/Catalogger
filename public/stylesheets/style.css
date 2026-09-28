@@ -55,3 +55,23 @@ body {
 a {
   color: #66b2ff;
 }
+.reviews-page {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 0 15px;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviews-header h1 {
+  margin: 0;
+}
+
+.logout-button {
+  padding: 8px 20px;
+  white-space: nowrap;
+}
