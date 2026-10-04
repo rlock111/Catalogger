@@ -55,20 +55,37 @@ body {
 a {
   color: #66b2ff;
 }
-.reviews-page {
-  max-width: 500px;
-  margin: 60px auto;
-  padding: 0 15px;
+
+.logo,
+.logo:hover,
+.logo:focus {
+  color: #1db954;
+  font-weight: bold;
 }
 
-.reviews-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.banner {
+  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
 }
 
-.reviews-header h1 {
-  margin: 0;
+.review-card {
+  border-left: 4px solid #1db954;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.rating i {
+  margin-right: 2px;
+}
+
+.btn-green,
+.btn-green:hover {
+  background-color: #168f41;
+  border-color: #168f41;
 }
 
 .logout-button {

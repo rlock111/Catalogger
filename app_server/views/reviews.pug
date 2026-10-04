@@ -1,6 +1,45 @@
 extends layout
+
 block content
-  .reviews-page
-    .reviews-header
-      h1 My Reviews
-      a.btn.btn-primary.logout-button(href="/login") Logout
+  .row.banner.mt-4.mb-4
+    .col-12.col-md-8.offset-md-2
+      a.btn.btn-primary.btn-green.logout-button.float-end(href="/login") Logout
+      h1= title
+  .row
+    .col-12.col-md-8.offset-md-2
+
+      .card.text-bg-dark.review-card.mb-3
+        .card-body
+          .row
+            .col-4
+              img.img-fluid.rounded(src="https://coverartarchive.org/release/d30b6902-f26a-4bfc-adbc-c3a6824ddc23/front-500", alt="Red")
+            .col-8
+              h4 Red
+              p.rating.text-warning
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+              p King Crimson
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              a.btn.btn-primary.btn-green.float-end(href="https://open.spotify.com/album/4mA3RKIoEoX4JlJSHueQae") Listen on Spotify
+              small.reviewTimestamp 1 October 2026
+
+      .card.text-bg-dark.review-card.mb-3
+        .card-body
+          .row
+            .col-4
+              img.img-fluid.rounded(src="https://coverartarchive.org/release/002ac904-c483-4155-8952-1b283aded393/front-500", alt="Power, Corruption & Lies")
+            .col-8
+              h4 Power, Corruption &amp; Lies
+              p.rating.text-warning
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-regular.fa-star
+              p New Order
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              a.btn.btn-primary.btn-green.float-end(href="https://open.spotify.com/album/6qcqaO5QSn2T13BlumueKk") Listen on Spotify
+              small.reviewTimestamp 25 September 2026
