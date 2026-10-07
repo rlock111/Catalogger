@@ -68,6 +68,10 @@ a {
   padding-bottom: 15px;
 }
 
+.record-icon {
+  color: #1db954;
+}
+
 .review-card {
   border-left: 4px solid #1db954;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
