@@ -15,29 +15,20 @@ const albumsList = async function (req, res) {
   }
 };
 
-const albumsReadOne = function (req, res) {
-  if (req.params && req.params.albumid) {
-    Album
-      .findById(req.params.albumid)
-      .then(album => {
-        if (!album) {
-          return res
-            .status(404)
-            .json({ message: "albumid not found" });
-        }
-        res
-          .status(200)
-          .json(album);
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ message: "Error retrieving album", error: err });
-      });
-  } else {
-    res
-      .status(400)
-      .json({ message: "No albumid in request" });
+const albumsReadOne = async function (req, res) {
+  if (!req.params || !req.params.albumid) {
+    return res.status(400).json({ message: "No albumid in request" });
+  }
+  try {
+    const album = await Album.findById(req.params.albumid);
+
+    if (!album) {
+      return res.status(404).json({ message: "albumid not found" });
+    }
+
+    res.status(200).json(album);
+  } catch (err) {
+    res.status(500).json({ message: "Error retrieving album", error: err });
   }
 };
 

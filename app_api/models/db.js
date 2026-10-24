@@ -14,3 +14,4 @@ try {
   console.log('could not connect');
 }
 require('./albums');
+require('./users');
