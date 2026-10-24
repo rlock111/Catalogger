@@ -1,19 +1,18 @@
 const mongoose = require('mongoose');
 const Album = mongoose.model('Album');
 
-const albumsList = function (req, res) {
-  Album
-    .find()
-    .then(albums => {
-      res
-        .status(200)
-        .json(albums);
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ message: "Error retrieving albums", error: err });
-    });
+const albumsList = async function (req, res) {
+  try {
+    const albums = await Album.find();
+
+    if (!albums || albums.length === 0) {
+      return res.status(404).json({ message: "No albums found" });
+    }
+
+    res.status(200).json(albums);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
 
 const albumsReadOne = function (req, res) {

@@ -3,6 +3,7 @@ const router = express.Router();
 const ctrlAuth = require('../controllers/auth');
 const ctrlReviews = require('../controllers/reviews');
 
+router.get('/', ctrlAuth.homeRedirect);
 router.get('/register', ctrlAuth.registerForm);
 router.get('/login', ctrlAuth.loginForm);
 router.get('/reviews', ctrlReviews.reviewsList);

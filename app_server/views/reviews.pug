@@ -9,39 +9,25 @@ block content
         | &nbsp;#{title}
   .row
     .col-12.col-md-8.offset-md-2
+      each album in albums
+        each review in album.reviews
 
-      .card.text-bg-dark.review-card.mb-3
-        .card-body
-          .row
-            .col-4
-              img.img-fluid.rounded(src="https://coverartarchive.org/release/d30b6902-f26a-4bfc-adbc-c3a6824ddc23/front-500", alt="Red")
-            .col-8
-              h4 Red
-              p.rating.text-warning
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-              p King Crimson
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              a.btn.btn-primary.btn-green.float-end(href="https://open.spotify.com/album/4mA3RKIoEoX4JlJSHueQae") Listen on Spotify
-              small.reviewTimestamp 1 October 2026
-
-      .card.text-bg-dark.review-card.mb-3
-        .card-body
-          .row
-            .col-4
-              img.img-fluid.rounded(src="https://coverartarchive.org/release/002ac904-c483-4155-8952-1b283aded393/front-500", alt="Power, Corruption & Lies")
-            .col-8
-              h4 Power, Corruption &amp; Lies
-              p.rating.text-warning
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-                i.fa-solid.fa-star
-                i.fa-regular.fa-star
-              p New Order
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              a.btn.btn-primary.btn-green.float-end(href="https://open.spotify.com/album/6qcqaO5QSn2T13BlumueKk") Listen on Spotify
-              small.reviewTimestamp 25 September 2026
+          .card.text-bg-dark.review-card.mb-3
+            .card-body
+              .row
+                .col-4
+                  img.img-fluid.rounded(src=album.coverImage, alt=album.title)
+                .col-8
+                  h4= album.title
+                  p.rating.text-warning
+                    each star in [1, 2, 3, 4, 5]
+                      if star <= review.rating
+                        i.fa-solid.fa-star
+                      else
+                        i.fa-regular.fa-star
+                  p= album.artist
+                  p= review.reviewText
+                  a.btn.btn-primary.btn-green.float-end(href=album.spotifyUrl) Listen on Spotify
+                  small.reviewTimestamp= new Date(review.createdOn).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+      else
+        p No reviews yet.
