@@ -1,0 +1,23 @@
+<div class="card text-bg-dark review-card mb-3">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <img class="img-fluid rounded" src="{{ album.coverImage }}" alt="{{ album.title }}">
+      </div>
+      <div class="col-8">
+        <h4>{{ album.title }}</h4>
+        <p class="rating text-warning">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </p>
+        <p>{{ album.artist }}</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a class="btn btn-primary btn-green float-end" href="{{ album.spotifyUrl }}">Listen on Spotify</a>
+        <small class="reviewTimestamp">1 October 2026</small>
+      </div>
+    </div>
+  </div>
+</div>
