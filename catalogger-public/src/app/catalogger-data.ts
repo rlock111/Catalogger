@@ -22,7 +22,7 @@ export class Album {
 @Service()
 export class CataloggerData {
   private http = inject(HttpClient);
-  private apiBaseUrl = 'http://localhost:3000/api';
+  private apiBaseUrl = '/api';
 
   public async getAlbums(): Promise<Album[]> {
     const url = `${this.apiBaseUrl}/albums`;
